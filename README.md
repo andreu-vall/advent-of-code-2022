@@ -2,15 +2,12 @@
 
 25 different languages Challenge
 
-Day | Language | Year | Used b4 | Installed
-----|----------|------|---------|-----------
-01  | [Bash](#01-bash)         | 1989 | Yes     | Yes
-02  | [Assembly](#02-assembly) | 1947 | Yes     | No
-03  | [Fortran](#03-fortran)   | 1957 | No      | Yes
+Day | Language                 | Year | Used b4 | Installed | Comment
+----|--------------------------|------|---------|-----------|--------------------------
+01  | [Bash](#01-bash)         | 1989 | Yes     | Yes       | 
+02  | [Assembly](#02-assembly) | 1947 | Yes     | No        | Remembered the pain of jumping
+03  | [Fortran](#03-fortran)   | 1957 | No      | Yes       | Used wsl on VSCode Remote Shell
 04  | ????
-
-
-[Test](#01-bash)
 
 ...
 - [ ] Day 21: C
