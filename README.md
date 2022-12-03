@@ -4,13 +4,13 @@
 
 Day | Language | Year | Used b4 | Installed
 ----|----------|------|---------|-----------
-01  | Bash     | 1989 | Yes     | Yes
-02  | Assembly | 1947 | Yes     | No
-03  | Fortran  | 1957 | No      | Yes
+01  | [Bash](#01-bash)         | 1989 | Yes     | Yes
+02  | [Assembly](#02-assembly) | 1947 | Yes     | No
+03  | [Fortran](#03-fortran)   | 1957 | No      | Yes
 04  | ????
 
 
-[Test](01.-bash)
+[Test](#01-bash)
 
 ...
 - [ ] Day 21: C
