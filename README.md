@@ -2,11 +2,15 @@
 
 25 different languages Challenge
 
-Day | Language | Year
-----|----------|--------------
-01  | Bash     | 1989
-02  | Assembly | 1947
+Day | Language | Year | Used b4 | Installed
+----|----------|------|---------|-----------
+01  | Bash     | 1989 | Yes     | Yes
+02  | Assembly | 1947 | Yes     | No
+03  | Fortran  | 1957 | No      | Yes
+04  | ????
 
+
+[Test](01.-bash)
 
 ...
 - [ ] Day 21: C
@@ -16,12 +20,20 @@ Day | Language | Year
 - [ ] Day 25: Python
 
 
-### Bash
+## 01. Bash
 Bourne Again SHell. Used for making Scripts
 ```
 bash 01.sh
 ```
 
-### Assembly
+## 02. Assembly
 Has routines and operations on registers.
-Needs quite a lot of jumps, but at least has divison with reminder.
+Needs quite a lot of jumps, but at least has divison with reminder
+
+## 03. Fortran
+One of the if not the first hight level programming language, still used today.
+```
+gfortran 03.f90
+./a.out < inputs/03.txt
+```
+
