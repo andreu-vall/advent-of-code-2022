@@ -10,9 +10,33 @@ Day | Language                 | Year | Used b4 | Installed | Comment
 04  | ????
 
 ...
-- [ ] Day 21: C
+
+Lisp, Scala, SQL, Powershell???
+Old ones? Or new ones? Or some of both?
+...
+- [x] Day 01: Bash
+- [x] Day 02: Assembly
+- [x] Day 03: Fortran
+- [ ] Day 04: 
+- [ ] Day 05: 
+- [ ] Day 06: 
+- [ ] Day 07: 
+- [ ] Day 08: 
+- [ ] Day 09: MATLAB
+- [ ] Day 10: Rust
+- [ ] Day 11: Perl
+- [ ] Day 12: Swift
+- [ ] Day 13: Ruby
+- [ ] Day 14: PHP
+- [ ] Day 15: Julia
+- [ ] Day 16: R
+- [ ] Day 17: Go
+- [ ] Day 18: Kotlin
+- [ ] Day 19: C
+- [ ] Day 20: C#
+- [ ] Day 21: Javascript
 - [ ] Day 22: Java
-- [ ] Day 23: Javascript
+- [ ] Day 23: Typescript
 - [ ] Day 24: C++
 - [ ] Day 25: Python
 
