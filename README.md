@@ -13,6 +13,9 @@ Day | Language                 | Year | Used b4 | Installed | Comment
 
 Lisp, Scala, SQL, Powershell???
 Old ones? Or new ones? Or some of both?
+Old: Algol, Pascal, Cobol, Basic, Ada
+New: Elixir, Elm
+Others: Lua
 ...
 - [x] Day 01: Bash
 - [x] Day 02: Assembly
