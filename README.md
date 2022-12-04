@@ -28,7 +28,8 @@ Has routines and operations on registers.
 Needs quite a lot of jumps, but at least has divison with reminder
 
 ## 03. Fortran
-One of the if not the first hight level programming language, still used today.
+FORmula TRANslation
+The first commercially available language and one of the first high level programming languages, still used today.
 ```
 gfortran 03.f90
 ./a.out < inputs/03.txt
