@@ -7,11 +7,12 @@ Day | Language                 | Year | Used b4 | Installed | Comment
 01  | [Bash](#01-bash)         | 1989 | Yes     | Yes       | 
 02  | [Assembly](#02-assembly) | 1947 | Yes     | No        | Remembered the pain of jumping
 03  | [Fortran](#03-fortran)   | 1957 | No      | Yes       | Used wsl on VSCode Remote Shell
-04  | ????
+04  | [SQL](#O4-sql)           | 1974 | Yes     | Yes       |
+05  | ????
 
 ...
 
-Lisp, Scala, SQL, Powershell???
+Lisp, Scala, Powershell???
 Old ones? Or new ones? Or some of both?
 Old: Algol, Pascal, Cobol, Basic, Ada
 New: Elixir, Elm
@@ -20,7 +21,7 @@ Others: Lua
 - [x] Day 01: Bash
 - [x] Day 02: Assembly
 - [x] Day 03: Fortran
-- [ ] Day 04: 
+- [X] Day 04: SQL
 - [ ] Day 05: 
 - [ ] Day 06: 
 - [ ] Day 07: 
@@ -61,4 +62,6 @@ The first commercially available language and one of the first high level progra
 gfortran 03.f90
 ./a.out < inputs/03.txt
 ```
+
+## 04. SQL
 
