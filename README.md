@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-25 different languages Challenge
+25 different languages Challenge. Goals for each language: learn/remember the basics, define and use a function.
 
 Day | Language                 | Year | Used b4 | Installed | Comment
 ----|--------------------------|------|---------|-----------|--------------------------
