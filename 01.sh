@@ -1,27 +1,41 @@
 #!bin/bash
 
-max=0 # Can't add spaces
-tmp=0
-array=()
-while read -r line
-do
-    if [ -z "$line" ]
-    then
-        array+=($tmp)
-        tmp=0
-    else
-        (( tmp += line))
-        if [ $tmp -gt $max ]
+# WTF Bash functions can't return values.
+# They are kinda useless ngl
+do_partial_sums() {
+    tmp=0 # Can't add spaces!!!!
+    array=() # All variables are global rofl
+    while read line
+    do
+        if [ -z "$line" ]
         then
-            max=$tmp
+            array+=($tmp)
+            tmp=0
+        else
+            (( tmp += line))
         fi
-    fi
-done < inputs/input01.txt
+    done < inputs/01.txt
+    array+=($tmp)
+}
+
+comp_max() {
+    max=0
+    for val in "${array[@]}"
+    do
+        if [ $val -gt $max ]
+        then
+            max=$val
+        fi
+    done
+}
+
+do_partial_sums
 
 # Part 1
+comp_max
 echo $max
 
 # Part 2
-array+=($tmp)
-IFS=$'\n' sorted=($(sort -n <<<"${array[*]}"));unset IFS # Sort array of numbers
+IFS=$'\n' sorted=($(sort -n <<<"${array[*]}")) # Sort array of numbers
+unset IFS
 echo $((${sorted[-1]} + ${sorted[-2]} + ${sorted[-3]}))
