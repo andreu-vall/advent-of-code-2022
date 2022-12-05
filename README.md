@@ -2,20 +2,21 @@
 
 25 different languages Challenge. Goals for each language: learn/remember the basics, define and use a function.
 
-Day | Language                         | Year | Used b4 | Installed | Comment
-----|----------------------------------|------|---------|-----------|--------------------------
-01  | [Bash](#01-bash)                 | 1989 | Yes     | Yes       | 
-02  | [Assembly](#02-assembly)         | 1947 | Yes     | No        | Remembered the pain of jumping
-03  | [Fortran](#03-fortran)           | 1957 | No      | Yes       | Used wsl on VSCode Remote Shell
-04  | [SQL](#04-sql)                   | 1974 | Yes     | Yes       |
-05  | [Visual Basic](#05-visual-basic) | 1991 | No      | No        | So my father used Visual Basic
+Day | Language                         | Year | Used b4            | Installed          | Comment
+----|----------------------------------|------|--------------------|--------------------|------------------------------------
+01  | [Bash](#01-bash)                 | 1989 | :heavy_check_mark: | :heavy_check_mark: | The default Linux Shell, a bit ugly
+02  | [Assembly](#02-assembly)         | 1947 | :heavy_check_mark: | :x:                | Remembered the pain of jumping
+03  | [Fortran](#03-fortran)           | 1957 | :x:                | :heavy_check_mark: | Used WSL on VSCode Remote Shell
+04  | [SQL](#04-sql)                   | 1974 | :heavy_check_mark: | :heavy_check_mark: | Hold my tables
+05  | [Visual Basic](#05-visual-basic) | 1991 | :x:                | :x:                | So my father used Visual Basic
+06  | ??????
 
 
 ...
 
 Old ones? Or new ones? Or some of both?
 
-Old: Algol, Pascal, Cobol, Basic, Ada, Lisp
+Old: Algol, Pascal, Cobol, Ada, Lisp
 
 Middle: Scala
 
@@ -29,8 +30,8 @@ Others: Lua, Powershell
 - [x] Day 01: Bash
 - [x] Day 02: Assembly
 - [x] Day 03: Fortran
-- [X] Day 04: SQL
-- [ ] Day 05: 
+- [x] Day 04: SQL
+- [x] Day 05: Visual Basic
 - [ ] Day 06: 
 - [ ] Day 07: 
 - [ ] Day 08: 
@@ -80,5 +81,5 @@ source 04.sql
 ```
 
 ## 05. Visual Basic
-Needed to close a lot whiles, ifs, but the closing of for was "Next" WTF Microsoft.
+Needed to close a lot of whiles and ifs, but the closing of for was "Next" instead of "End For", WTF Microsoft.
 A lot uglier than the relevant programming languages from the same time.
