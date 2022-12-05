@@ -53,7 +53,7 @@ bash 01.sh
 
 ## 02. Assembly
 Has routines and operations on registers.
-Needs quite a lot of jumps, but at least has divison with reminder
+Needs quite a lot of jumps, but at least has divison with remainder for modular arithmetic
 
 ## 03. Fortran
 FORmula TRANslation
@@ -66,6 +66,7 @@ gfortran 03.f90
 ## 04. SQL
 Structured Query Language
 ```
+sed -i 's/-/,/g' inputs/04.txt
 mysql --local-infile=1 -u root -p
 source 04.sql
 ```
