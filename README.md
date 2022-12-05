@@ -10,13 +10,21 @@ Day | Language                 | Year | Used b4 | Installed | Comment
 04  | [SQL](#04-sql)           | 1974 | Yes     | Yes       |
 05  | ????
 
+
 ...
+
 Old ones? Or new ones? Or some of both?
+
 Old: Algol, Pascal, Cobol, Basic, Ada, Lisp
+
 Middle: Scala
+
 New: Elixir, Elm
+
 Others: Lua, Powershell
+
 ...
+
 
 - [x] Day 01: Bash
 - [x] Day 02: Assembly
