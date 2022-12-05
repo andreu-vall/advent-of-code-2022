@@ -2,13 +2,13 @@
 
 25 different languages Challenge. Goals for each language: learn/remember the basics, define and use a function.
 
-Day | Language                 | Year | Used b4 | Installed | Comment
-----|--------------------------|------|---------|-----------|--------------------------
-01  | [Bash](#01-bash)         | 1989 | Yes     | Yes       | 
-02  | [Assembly](#02-assembly) | 1947 | Yes     | No        | Remembered the pain of jumping
-03  | [Fortran](#03-fortran)   | 1957 | No      | Yes       | Used wsl on VSCode Remote Shell
-04  | [SQL](#04-sql)           | 1974 | Yes     | Yes       |
-05  | ????
+Day | Language                         | Year | Used b4 | Installed | Comment
+----|----------------------------------|------|---------|-----------|--------------------------
+01  | [Bash](#01-bash)                 | 1989 | Yes     | Yes       | 
+02  | [Assembly](#02-assembly)         | 1947 | Yes     | No        | Remembered the pain of jumping
+03  | [Fortran](#03-fortran)           | 1957 | No      | Yes       | Used wsl on VSCode Remote Shell
+04  | [SQL](#04-sql)                   | 1974 | Yes     | Yes       |
+05  | [Visual Basic](#05-visual-basic) | 1991 | No      | No        | So my father used Visual Basic
 
 
 ...
@@ -78,3 +78,7 @@ sed -i 's/-/,/g' inputs/04.txt
 mysql --local-infile=1 -u root -p
 source 04.sql
 ```
+
+## 05. Visual Basic
+Needed to close a lot whiles, ifs, but the closing of for was "Next" WTF Microsoft.
+A lot uglier than the relevant programming languages from the same time.
