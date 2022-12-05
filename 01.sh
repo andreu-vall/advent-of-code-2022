@@ -1,39 +1,42 @@
 #!bin/bash
 
-# WTF Bash functions can't return values.
-# They are kinda useless ngl
+# A hell lot of $'s
+
+# WTF Bash functions can't return values!
+# We need to echo the values and capture them in a variable
 do_partial_sums() {
     tmp=0 # Can't add spaces!!!!
-    array=() # All variables are global rofl
+    array_tmp=() # All variables are global, watch out
     while read line
     do
         if [ -z "$line" ]
         then
-            array+=($tmp)
+            array_tmp+=($tmp)
             tmp=0
         else
             (( tmp += line))
         fi
     done < inputs/01.txt
-    array+=($tmp)
+    array_tmp+=($tmp)
+    echo ${array_tmp[@]}
 }
 
 comp_max() {
     max=0
-    for val in "${array[@]}"
+    for val in $@ # All the arguments (the array is split)
     do
         if [ $val -gt $max ]
         then
             max=$val
         fi
     done
+    echo $max
 }
 
-do_partial_sums
+array=($(do_partial_sums))
 
 # Part 1
-comp_max
-echo $max
+echo $(comp_max "${array[@]}")
 
 # Part 2
 IFS=$'\n' sorted=($(sort -n <<<"${array[*]}")) # Sort array of numbers
