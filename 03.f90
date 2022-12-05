@@ -1,19 +1,17 @@
 program demo_readline
-    implicit none
-    character(len=:),allocatable :: line
-    integer :: ier
+
+    character(len=:), allocatable :: line
     integer, dimension(52) :: priorities
     integer, dimension(52, 3) :: common
-    integer i, half, priority, suma, suma2, number
+    integer ier, i, half, priority, suma, suma2, number
 
     suma = 0
     suma2 = 0
     number = 0
-    INFINITE: do
+    READLINES: do
         call readline(line, ier)
-        if(ier.ne.0) exit INFINITE
 
-        number = number + 1
+        if(ier.ne.0) exit READLINES
         
         half = len(line) / 2
 
@@ -34,6 +32,8 @@ program demo_readline
             endif
         enddo
 
+        number = number + 1
+
         do i = 1, 52
             common(i, number) = 0
         enddo
@@ -52,20 +52,16 @@ program demo_readline
             enddo
         endif
 
-
-    enddo INFINITE
+    enddo READLINES
 
     print *, suma
     print *, suma2
 
- contains
+contains
 
- function get_priority (char)  
-
-    implicit none          
-    integer :: get_priority   
-    character :: char
-
+function get_priority (char)
+    integer get_priority   
+    character char
     get_priority = iachar(char)
     if (get_priority > 96) then
         get_priority = get_priority - 96
@@ -75,15 +71,13 @@ program demo_readline
        
 end function get_priority
 
- subroutine readline(line,ier)
- implicit none
- character(len=:),allocatable,intent(out) :: line
- integer,intent(out)                      :: ier
+subroutine readline(line,ier)
+    character(len=:), allocatable, intent(out) :: line
+    integer, intent(out)                      :: ier
  
-    integer,parameter                     :: buflen=1024
+    integer, parameter                     :: buflen=1024
     character(len=buflen)                 :: buffer
-    integer                               :: last
-    integer                               :: isize
+    integer last, isize
  
     line=''
     ier=0
@@ -107,6 +101,6 @@ end function get_priority
     enddo INFINITE
     line=trim(line)
 
- end subroutine readline
+end subroutine readline
 
- end program demo_readline
+end program demo_readline
