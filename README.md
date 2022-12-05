@@ -57,7 +57,7 @@ Needs quite a lot of jumps, but at least has divison with remainder for modular 
 
 ## 03. Fortran
 FORmula TRANslation
-The first commercially available language and one of the first high level programming languages, still used today.
+The first commercially available language and one of the first high level programming languages, still used today for high performance computing.
 ```
 gfortran 03.f90
 ./a.out < inputs/03.txt
