@@ -7,17 +7,17 @@ Day | Language                 | Year | Used b4 | Installed | Comment
 01  | [Bash](#01-bash)         | 1989 | Yes     | Yes       | 
 02  | [Assembly](#02-assembly) | 1947 | Yes     | No        | Remembered the pain of jumping
 03  | [Fortran](#03-fortran)   | 1957 | No      | Yes       | Used wsl on VSCode Remote Shell
-04  | [SQL](#O4-sql)           | 1974 | Yes     | Yes       |
+04  | [SQL](#04-sql)           | 1974 | Yes     | Yes       |
 05  | ????
 
 ...
-
-Lisp, Scala, Powershell???
 Old ones? Or new ones? Or some of both?
-Old: Algol, Pascal, Cobol, Basic, Ada
+Old: Algol, Pascal, Cobol, Basic, Ada, Lisp
+Middle: Scala
 New: Elixir, Elm
-Others: Lua
+Others: Lua, Powershell
 ...
+
 - [x] Day 01: Bash
 - [x] Day 02: Assembly
 - [x] Day 03: Fortran
@@ -64,4 +64,8 @@ gfortran 03.f90
 ```
 
 ## 04. SQL
-
+Structured Query Language
+```
+mysql --local-infile=1 -u root -p
+source 04.sql
+```
