@@ -1,4 +1,4 @@
-# Advent of Code 2021
+# Advent of Code 2022
 
 25 different languages Challenge. Goals for each language: learn/remember the basics, define and use a function.
 
