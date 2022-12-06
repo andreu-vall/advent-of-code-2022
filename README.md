@@ -73,7 +73,7 @@ gfortran 03.f90
 ```
 
 ## 04. SQL
-Structured Query Language
+Structured Query Language, 'Ess-cue-ell'
 ```
 sed -i 's/-/,/g' inputs/04.txt
 mysql --local-infile=1 -u root -p
