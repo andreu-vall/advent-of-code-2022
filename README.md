@@ -10,7 +10,7 @@ Day | Language                         | Year | Used b4            | Installed  
 04  | [SQL](#04-sql)                   | 1974 | :heavy_check_mark: | :heavy_check_mark: | Hold my tables
 05  | [Visual Basic](#05-visual-basic) | 1991 | :x:                | :x:                | So my father used Visual Basic
 06  | [Pascal](#06-pascal)             | 1970 | :x:                | :x:                | Actually decent, except putting ;
-07  | ???????
+07  | [Scala])(#07-scala)              | 2005 | :x:                | :x:                | Java without ; 
 
 
 ...
@@ -19,15 +19,11 @@ Old ones? Or new ones? Or some of both?
 
 Old: Lisp, Algol, Cobol, Ada
 
-Middle: Scala
-
 New: Elixir, Elm
 
 Others: Lua, Powershell
 
 ...
-
-- [ ] Day 07: 
 - [ ] Day 08: 
 - [ ] Day 09: MATLAB
 - [ ] Day 10: Rust
@@ -81,3 +77,6 @@ A lot uglier than the relevant programming languages from the same time.
 
 ## 06. Pascal
 It's actually pretty decent, except for the fact that all the debugging I had to do was put ; almost everywhere (and not everywhere which makes it more painful).
+
+## 07. Scala
+Decent, I like not having to end lines with the ;
