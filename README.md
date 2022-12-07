@@ -10,7 +10,7 @@ Day | Language                         | Year | Used b4            | Installed  
 04  | [SQL](#04-sql)                   | 1974 | :heavy_check_mark: | :heavy_check_mark: | Hold my tables
 05  | [Visual Basic](#05-visual-basic) | 1991 | :x:                | :x:                | So my father used Visual Basic
 06  | [Pascal](#06-pascal)             | 1970 | :x:                | :x:                | Actually decent, except putting ;
-07  | [Scala])(#07-scala)              | 2005 | :x:                | :x:                | Java without ; 
+07  | [Scala](#07-scala)               | 2005 | :x:                | :x:                | Java without ; 
 
 
 ...
