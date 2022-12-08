@@ -1,6 +1,6 @@
 # Advent of Code 2022
 
-As this is my third year doing [Advent of Code](https://adventofcode.com), this time I will try the **25 Different Languages Challenge**, which is solving the problem each day with a different language. I will start with the old and Low-Level ones and work my way up to the ones I'm most comfortable. The only goal for each language is defining and using a function. This will serve as a programming language history task and checking out interesting languages.
+As this is my third year doing [Advent of Code](https://adventofcode.com), this time I will try the **25 Different Languages Challenge**, which is solving the problem each day with a different language. I will start with the old and Low-Level ones and work my way up to the ones I'm most comfortable with. The only goal for each language is defining and using a function. This will serve as a programming language history task and to check out interesting languages.
 
 Day Solution            | Language                         | Year | Used b4            | Installed          | Comment
 ------------------------|----------------------------------|------|--------------------|--------------------|------------------------------------
