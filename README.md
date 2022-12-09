@@ -1,17 +1,17 @@
 # Advent of Code 2022
 
-25 different languages Challenge. Goals for each language: learn/remember the basics, define and use a function.
+As this is my third year doing [Advent of Code](https://adventofcode.com), this time I will try the **25 Different Languages Challenge**, which is solving the problem each day with a different language. I will start with the old and Low-Level ones and work my way up to the ones I'm most comfortable with. The only goal for each language is defining and using a function. This will serve as a programming language history task and to check out interesting languages.
 
-Day | Language                         | Year | Used b4            | Installed          | Comment
-----|----------------------------------|------|--------------------|--------------------|------------------------------------
-01  | [Bash](#01-bash)                 | 1989 | :heavy_check_mark: | :heavy_check_mark: | The default Linux Shell, a bit ugly
-02  | [Assembly](#02-assembly)         | 1947 | :heavy_check_mark: | :x:                | Remembered the pain of jumping
-03  | [Fortran](#03-fortran)           | 1957 | :x:                | :heavy_check_mark: | Used WSL on VSCode Remote Shell
-04  | [SQL](#04-sql)                   | 1974 | :heavy_check_mark: | :heavy_check_mark: | Hold my tables
-05  | [Visual Basic](#05-visual-basic) | 1991 | :x:                | :x:                | So my father used Visual Basic
-06  | [Pascal](#06-pascal)             | 1970 | :x:                | :x:                | Actually decent, except putting ;
-07  | [Scala](#07-scala)               | 2005 | :x:                | :x:                | Java without ; 
-08  | [Lua](#08-lua)                   | 1993 | :x:                | :x:                | Both gangster and slighly painful things
+Day Solution            | Language                         | Year | Used b4            | Installed          | Comment
+------------------------|----------------------------------|------|--------------------|--------------------|------------------------------------
+[01.sh](src/01.sh)      | [Bash](#01-bash)                 | 1989 | :heavy_check_mark: | :heavy_check_mark: | The default Linux Shell, a bit ugly
+[02.asm](src/02.asm)    | [Assembly](#02-assembly)         | 1947 | :heavy_check_mark: | :x:                | Remembered the pain of jumping
+[03.f90](src/03.f90)    | [Fortran](#03-fortran)           | 1957 | :x:                | :heavy_check_mark: | Used WSL on VSCode Remote Shell
+[04.sql](src/04.sql)    | [SQL](#04-sql)                   | 1974 | :heavy_check_mark: | :heavy_check_mark: | Hold my tables
+[05.vb](src/05.vb)      | [Visual Basic](#05-visual-basic) | 1991 | :x:                | :x:                | So my father used Visual Basic
+[06.pas](src/06.pas)    | [Pascal](#06-pascal)             | 1970 | :x:                | :x:                | Actually decent, except putting ;
+[07.scala](src/07.scala)| [Scala](#07-scala)               | 2005 | :x:                | :x:                | Java without ; 
+[08.lua](src/08.lua)    | [Lua](#08-lua)                   | 1993 | :x:                | :x:                | Both gangster and slighly painful things
 
 Left out: Lisp, Algol, Elixir, Powershell
 
