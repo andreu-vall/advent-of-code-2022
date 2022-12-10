@@ -12,12 +12,12 @@ Day Solution            | Language                         | Year | Used b4     
 [06.pas](src/06.pas)    | [Pascal](#06-pascal)             | 1970 | :x:                | :x:                | Actually decent, except putting ;
 [07.scala](src/07.scala)| [Scala](#07-scala)               | 2005 | :x:                | :x:                | Java without ; 
 [08.lua](src/08.lua)    | [Lua](#08-lua)                   | 1993 | :x:                | :x:                | Both gangster and slighly painful things
+[09.m](src/09.m)        | [MATLAB](#09-matlab)             | 1984 | :x:                | :x:                | A bit restrictive but works
 
 Left out: Lisp, Algol, Elixir, Powershell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 09: MATLAB
 - [ ] Day 10: Rust
 - [ ] Day 11: Perl
 - [ ] Day 12: Swift
@@ -75,3 +75,6 @@ Decent, I like not having to end lines with the ;
 
 ## 08. Lua
 Getting the length of a string with # is really gangster, but getting a char from an string is really painful. Overall pretty good experience.
+
+## 09. MATLAB
+The functions are a bit pants because I can't edit a dictionary inside them, but overall it's decent.
