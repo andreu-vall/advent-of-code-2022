@@ -13,13 +13,13 @@ Day Solution            | Language                         | Year | Used b4     
 [07.scala](src/07.scala)| [Scala](#07-scala)               | 2005 | :x:                | :x:                | Java without ; 
 [08.lua](src/08.lua)    | [Lua](#08-lua)                   | 1993 | :x:                | :x:                | Both gangster and slighly painful things
 [09.m](src/09.m)        | [MATLAB](#09-matlab)             | 1984 | :x:                | :x:                | A bit restrictive but works
+[10.pl](src/10.pl)      | [Perl](#10-perl)                 | 1987 | :x:                | :heavy_check_mark: | Acceptable, but putting $ and error checking sucks
 
 Left out: Lisp, Algol, Elixir, Powershell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 10: Rust
-- [ ] Day 11: Perl
+- [ ] Day 11: Rust
 - [ ] Day 12: Swift
 - [ ] Day 13: Ruby
 - [ ] Day 14: PHP
@@ -39,7 +39,7 @@ Order subject to change depending on the problem and how I'm feeling
 ## 01. Bash
 Bourne Again SHell. Used for making Scripts
 ```
-bash 01.sh
+bash src/01.sh
 ```
 
 ## 02. Assembly
@@ -50,7 +50,7 @@ Needs quite a lot of jumps, but at least has divison with remainder for modular 
 FORmula TRANslation
 The first commercially available language and one of the first high level programming languages, still used today for high performance computing.
 ```
-gfortran 03.f90
+gfortran src/03.f90
 ./a.out < inputs/03.txt
 ```
 
@@ -59,7 +59,7 @@ Structured Query Language, 'Ess-cue-ell'
 ```
 sed -i 's/-/,/g' inputs/04.txt
 mysql --local-infile=1 -u root -p
-source 04.sql
+source src/04.sql
 ```
 
 ## 05. Visual Basic
@@ -78,3 +78,8 @@ Getting the length of a string with # is really gangster, but getting a char fro
 
 ## 09. MATLAB
 The functions are a bit pants because I can't edit a dictionary inside them, but overall it's decent.
+
+## 10. Perl
+```
+perl src/10.pl < inputs/10.txt
+```
