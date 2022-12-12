@@ -13,15 +13,15 @@ Day Solution            | Language                         | Year | Used b4     
 [07.scala](src/07.scala)| [Scala](#07-scala)               | 2005 | :x:                | :x:                | Java without ; 
 [08.lua](src/08.lua)    | [Lua](#08-lua)                   | 1993 | :x:                | :x:                | Both gangster and slighly painful things
 [09.m](src/09.m)        | [MATLAB](#09-matlab)             | 1984 | :x:                | :x:                | A bit restrictive but works
-[10.pl](src/10.pl)      | [Perl](#10-perl)                 | 1987 | :x:                | :heavy_check_mark: | Acceptable, but putting $ and error checking sucks
+[10.pl](src/10.pl)      | [Perl](#10-perl)                 | 1987 | :x:                | :heavy_check_mark: | Acceptable, but $ and err checking sucks
+[11.swift](src/11.swift)| [Swift](#11-swift)               | 2014 | :x:                | :x:                | Pretty bad ngl
+[12.rb](src/12.rb)      | [Ruby](#12-ruby)                 | 1995 | :x:                | :x:                | It's actually good but a lot of ends
 
 Left out: Lisp, Algol, Elixir, Powershell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 11: Rust
-- [ ] Day 12: Swift
-- [ ] Day 13: Ruby
+- [ ] Day 13: Rust
 - [ ] Day 14: PHP
 - [ ] Day 15: Julia
 - [ ] Day 16: R
@@ -83,3 +83,8 @@ The functions are a bit pants because I can't edit a dictionary inside them, but
 ```
 perl src/10.pl < inputs/10.txt
 ```
+
+## 11. Swift
+
+## 12. Ruby
+
