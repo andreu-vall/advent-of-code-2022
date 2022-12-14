@@ -17,12 +17,12 @@ Day Solution            | Language                         | Year | Used b4     
 [11.swift](src/11.swift)| [Swift](#11-swift)               | 2014 | :x:                | :x:                | Pretty bad ngl
 [12.rb](src/12.rb)      | [Ruby](#12-ruby)                 | 1995 | :x:                | :x:                | It's actually good but a lot of ends
 [13.jl](src/13.jl)      | [Julia](#13-julia)               | 2012 | :x:                | :heavy_check_mark: | Why are the ends necessary?
+[14.php](src/14.php)    | [PHP](#14-php)                   | 1995 | :x:                | :x:                | a bit painful $ and ; but does the job
 
-Left out: Lisp, Algol, Elixir, Powershell
+Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 14: PHP
 - [ ] Day 15: Rust
 - [ ] Day 16: R
 - [ ] Day 17: Go
@@ -85,10 +85,15 @@ perl src/10.pl < inputs/10.txt
 ```
 
 ## 11. Swift
+It's actually really ugly to be used as a General Programming Language.
 
 ## 12. Ruby
+Decent.
 
 ## 13. Julia
 ```
 Get-Content inputs/13.txt | julia src/13.jl
 ```
+
+## 14. PHP
+I thought previously that it was ugly, but it's actually acceptable to read and does the job. Though it's a bit painful to have to put $ before every single variable, why??? Even putting the ; at the end it's not remotely as painful as this.
