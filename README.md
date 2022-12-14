@@ -16,14 +16,14 @@ Day Solution            | Language                         | Year | Used b4     
 [10.pl](src/10.pl)      | [Perl](#10-perl)                 | 1987 | :x:                | :heavy_check_mark: | Acceptable, but $ and err checking sucks
 [11.swift](src/11.swift)| [Swift](#11-swift)               | 2014 | :x:                | :x:                | Pretty bad ngl
 [12.rb](src/12.rb)      | [Ruby](#12-ruby)                 | 1995 | :x:                | :x:                | It's actually good but a lot of ends
+[13.jl](src/13.jl)      | [Julia](#13-julia)               | 2012 | :x:                | :heavy_check_mark: | Why are the ends necessary?
 
 Left out: Lisp, Algol, Elixir, Powershell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 13: Rust
 - [ ] Day 14: PHP
-- [ ] Day 15: Julia
+- [ ] Day 15: Rust
 - [ ] Day 16: R
 - [ ] Day 17: Go
 - [ ] Day 18: Kotlin
@@ -88,3 +88,7 @@ perl src/10.pl < inputs/10.txt
 
 ## 12. Ruby
 
+## 13. Julia
+```
+Get-Content inputs/13.txt | julia src/13.jl
+```
