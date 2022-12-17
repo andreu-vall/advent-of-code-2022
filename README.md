@@ -19,12 +19,12 @@ Day Solution            | Language                         | Year | Used b4     
 [13.jl](src/13.jl)      | [Julia](#13-julia)               | 2012 | :x:                | :heavy_check_mark: | Why are the ends necessary?
 [14.php](src/14.php)    | [PHP](#14-php)                   | 1995 | :x:                | :x:                | a bit painful $ and ; but does the job
 [15.r](src/15.r)        | [R](#15-r)                       | 1993 | :heavy_check_mark: | :heavy_check_mark: | Quite hard the problem, R did not help
+[16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, but owning is weird
 
 Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 16: Rust
 - [ ] Day 17: Go
 - [ ] Day 18: Kotlin
 - [ ] Day 19: C
@@ -39,6 +39,7 @@ Order subject to change depending on the problem and how I'm feeling
 ## 01. Bash
 Bourne Again SHell. Used for making Scripts
 ```
+wsl
 bash src/01.sh
 ```
 
@@ -50,6 +51,7 @@ Needs quite a lot of jumps, but at least has divison with remainder for modular 
 FORmula TRANslation
 The first commercially available language and one of the first high level programming languages, still used today for high performance computing.
 ```
+wsl
 gfortran src/03.f90
 ./a.out < inputs/03.txt
 ```
@@ -57,6 +59,7 @@ gfortran src/03.f90
 ## 04. SQL
 Structured Query Language, 'Ess-cue-ell'
 ```
+wsl
 sed -i 's/-/,/g' inputs/04.txt
 mysql --local-infile=1 -u root -p
 source src/04.sql
@@ -81,6 +84,7 @@ The functions are a bit pants because I can't edit a dictionary inside them, but
 
 ## 10. Perl
 ```
+wsl
 perl src/10.pl < inputs/10.txt
 ```
 
@@ -102,4 +106,22 @@ I thought previously that it was ugly, but it's actually acceptable to read and 
 Yay finally I can sleep
 ```
 Get-Content inputs/15.txt | Rscript src/15.r
+```
+
+## 16. Rust
+That was a ride indeed.
+```
+wsl
+rustc src/16.rs
+./16 < inputs/16.txt
+```
+
+Using tqdm for progress bar:
+```
+wsl
+cargo new hello_cargo
+cd hello_cargo
+cargo add kdam
+cargo build
+cargo run < ../inputs/16.txt
 ```
