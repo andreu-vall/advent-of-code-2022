@@ -2,36 +2,57 @@ use std::io;
 use std::cmp;
 use std::collections::HashMap;
 use std::collections::HashSet;
+use kdam::tqdm;
+
+/*Could also be useful:
+
+println!("{:?}", array);
 
 fn print_type_of<T>(_: &T) {
-    println!("{}", std::any::type_name::<T>())
-}
+    println!("{}", std::any::type_name::<T>());
+}*/
 
 fn binary_length(number : usize, length : usize) -> String {
     let right = format!("{:b}", number);
     return "0".repeat(length - right.len()) + &right;
 }
 
-fn compute_win(comb : String, valve_flow : &Vec<u32>) -> u32 {
-    let mut win = 0;
-    for (i, c) in comb.chars().enumerate() {
-        if c == '1' {
-            win += valve_flow[i];
+fn compute_win(valve_comb : usize, flow_n : usize, flow_pressure : &Vec<u32>) -> u32 {
+    return binary_length(valve_comb, flow_n).chars().zip(flow_pressure).map(|(c, v)| v*((c=='1') as u32)).sum::<u32>();
+}
+
+fn gen_moves(valve : usize, valve_comb : usize, flow_n : usize, valve_hash : &HashMap<String, usize>,
+        edges : &Vec<HashSet<String>>, valve_to_flow : &HashMap<usize, usize>) -> Vec<(usize, usize)> {
+
+    let mut moves = Vec::new(); //There are no easy iterators like Python yield...
+
+    for other_valve_str in &edges[valve] { //Move to adjacent valve
+        moves.push((valve_comb, valve_hash[other_valve_str]));
+    }
+    if valve_to_flow.contains_key(&valve) { //If in positive flow valve and not already active, active it
+        let power_value = usize::pow(2, (flow_n - 1 - valve_to_flow[&valve]) as u32);
+        if valve_comb % (2 * power_value) < power_value {
+            moves.push((valve_comb + power_value, valve));
         }
     }
-    return win;
-    //return comb.chars().collect::<Vec<char>>().iter().zip(valve_flow).map(|(&i1, &i2)| i1.parse().unwrap() * i2).sum();
-    //const RADIX: u32 = 10;
-    //let x = "134";
-    //println!("{}", x.chars().map(|c| c.to_digit(RADIX).unwrap()).sum::<u32>());
+    return moves;
+}
+
+fn bound_sup(val : u32, minutes : u32, minute : u32, flow_pressure : &Vec<u32>) -> u32 {
+    let max_pressure : u32 = flow_pressure.iter().sum();
+    return val + max_pressure * (minutes - minute);
+}
+
+fn bound_inf(val : u32, win : u32, minutes : u32, minute : u32) -> u32 {
+    return val + win * (minutes - minute);
 }
 
 fn main() {
 
-    let mut valve_hash = HashMap::new(); //string_id -> 0, 1, 2, ...
-    let mut valve_n = 0;
+    let mut valve_hash : HashMap<String, usize> = HashMap::new(); //string_id -> 0, 1, 2, ...
+    let mut valve_n : usize = 0;
 
-    let mut valve_to_flow = HashMap::new(); //valve -> positive flow position
+    let mut valve_to_flow  = HashMap::new(); //valve -> positive flow position
     let mut flow_to_valve = Vec::new(); //Flow position -> valve
     let mut flow_pressure = Vec::new();
     let mut flow_n : usize = 0;
@@ -59,49 +80,76 @@ fn main() {
 
         valve_n += 1
     }
+    // ---------------------------------- PART 1 ----------------------------
     let minutes = 30;
-    let valve_comb_n = usize::pow(2, flow_n as u32); //Using an auto type assigned variable might change its type
-    let mut dp = vec![vec![vec![0; valve_n]; valve_comb_n]; minutes+1]; //and make crash other things that worked!!
-    dp[0][0][valve_hash["AA"]] = 1; //Cas inicial (added 1 extra as not to have -1's)
-
+    let valve_comb_n = usize::pow(2, flow_n as u32);    //Using an auto type assigned variable might change its type
+    let mut dp1 = vec![vec![0; valve_n]; valve_comb_n]; //and make crash other things that worked!!
+    let mut dp2 = vec![vec![0; valve_n]; valve_comb_n];
+    dp2[0][valve_hash["AA"]] = 1; //Cas inicial (added 1 extra as not to have -1's)
+    let mut greater_than = 0;
     for minute in 0..minutes {
+        std::mem::swap(&mut dp1, &mut dp2);
         for valve_comb in 0..valve_comb_n {
             for valve in 0..valve_n {
-                if dp[minute][valve_comb][valve] > 0 {
-                    //println!("minute: {}, valve_comb: {}, valve: {}, pressure: {}", minute, valve_comb, valve, 
-                    //    dp[minute][valve_comb][valve]);
-                    let mut comb = binary_length(valve_comb, flow_n);
-                    let win = compute_win(comb.clone(), &flow_pressure);
-                    for other_valve_str in &edges[valve] {
-                        dp[minute+1][valve_comb][valve_hash[other_valve_str]] = cmp::max(dp[minute][valve_comb][valve] + win, 
-                            dp[minute+1][valve_comb][valve_hash[other_valve_str]]);
-                    }
-                    if valve_to_flow.contains_key(&valve) {
-                        //println!("Can activate {}", valve);
-                        //println!("Before {}", comb.clone());
-                        comb.replace_range(valve_to_flow[&valve]..valve_to_flow[&valve]+1, "1");
-                        //println!("After {}", comb.clone());
-                        let new_valve_comb = usize::from_str_radix(&comb, 2).unwrap();
-                        //println!("Value: {}", new_valve_comb);
-                        dp[minute+1][new_valve_comb][valve] = cmp::max(dp[minute][valve_comb][valve] + win, 
-                            dp[minute+1][new_valve_comb][valve]);
-                        //println!("Put value: {}", dp[minute+1][new_valve_comb][valve]);
-                        //assert!(false);
+                if dp1[valve_comb][valve] > 0 && bound_sup(dp1[valve_comb][valve], minutes, minute, &flow_pressure) >= greater_than {
+                    let win = compute_win(valve_comb, flow_n, &flow_pressure);
+                    greater_than = cmp::max(greater_than, bound_inf(dp1[valve_comb][valve], win, minutes, minute));
+                    for (new_valve_comb, new_valve) in gen_moves(valve, valve_comb, flow_n, &valve_hash, &edges, &valve_to_flow).iter() {
+                        if dp1[valve_comb][valve] + win > dp2[*new_valve_comb][*new_valve] {
+                            dp2[*new_valve_comb][*new_valve] = dp1[valve_comb][valve] + win;
+                        }
                     }
                 }
             }
         }
     }
-    //println!("{:?}", array);
-    println!("Finished");
-    
     let mut max_value = 0;
-    for valve_comb in 0..valve_comb_n {
-        for valve in 0..valve_n {
-            if dp[minutes][valve_comb][valve] > max_value {
-                max_value = dp[minutes][valve_comb][valve];
+    for vector1d in dp2.iter() {
+        for value in vector1d.iter() {
+            if *value > max_value {
+                max_value = *value;
             }
         }
     }
-    println!("Answer 1: {}", max_value - 1);
+    println!("Part 1: {}", max_value - 1);
+
+    //---------------------------- PART 2 ----------------------
+    let minutes = 26;
+    let mut dp1 = vec![vec![vec![0; valve_n]; valve_n]; valve_comb_n];
+    let mut dp2 = vec![vec![vec![0; valve_n]; valve_n]; valve_comb_n];
+    dp2[0][valve_hash["AA"]][valve_hash["AA"]] = 1;
+    let mut greater_than = 0;
+    for minute in tqdm!(0..minutes) {
+        std::mem::swap(&mut dp1, &mut dp2);
+        for valve_comb in 0..valve_comb_n {
+            for valve1 in 0..valve_n {
+                for valve2 in 0..valve_n {
+                    if dp1[valve_comb][valve2][valve1] > 0 && bound_sup(dp1[valve_comb][valve2][valve1], minutes, minute, &flow_pressure)
+                            >= greater_than {
+                        let win = compute_win(valve_comb, flow_n, &flow_pressure);//Yikes forgetting here^ the equal was slow to debug...
+                        greater_than = cmp::max(greater_than, bound_inf(dp1[valve_comb][valve2][valve1], win, minutes, minute));
+                        for (new_valve_comb, new_valve2) in gen_moves(valve2, valve_comb, flow_n, &valve_hash, &edges, &valve_to_flow).iter() {
+                            for (new_new_valve_comb, new_valve1) in
+                                    gen_moves(valve1, *new_valve_comb, flow_n, &valve_hash, &edges, &valve_to_flow).iter() {
+                                if dp1[valve_comb][valve2][valve1] + win > dp2[*new_new_valve_comb][*new_valve2][*new_valve1] {
+                                    dp2[*new_new_valve_comb][*new_valve2][*new_valve1] = dp1[valve_comb][valve2][valve1] + win;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    let mut max_value = 0;
+    for vector2d in dp2.iter() {
+        for vector1d in vector2d.iter() {
+            for val in vector1d.iter() {
+                if *val > max_value {
+                    max_value = *val;
+                }
+            }
+        }
+    }
+    println!("Part 2: {}", max_value - 1);
 }
