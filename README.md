@@ -19,7 +19,7 @@ Day Solution            | Language                         | Year | Used b4     
 [13.jl](src/13.jl)      | [Julia](#13-julia)               | 2012 | :x:                | :heavy_check_mark: | Why are the ends necessary?
 [14.php](src/14.php)    | [PHP](#14-php)                   | 1995 | :x:                | :x:                | a bit painful $ and ; but does the job
 [15.r](src/15.r)        | [R](#15-r)                       | 1993 | :heavy_check_mark: | :heavy_check_mark: | Quite hard the problem, R did not help
-[16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, but owning is weird
+[16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, owning is a bit weird
 
 Left out: Algol, Elixir, Powershell, Haskell
 
@@ -109,18 +109,19 @@ Get-Content inputs/15.txt | Rscript src/15.r
 ```
 
 ## 16. Rust
-That was a ride indeed.
+That was a ride indeed. Rust is actually quite interesting.
 ```
 wsl
 rustc src/16.rs
 ./16 < inputs/16.txt
 ```
 
-Using tqdm for progress bar:
+Using tqdm for progress bar (needs a Cargo project?):
 ```
 wsl
 cargo new hello_cargo
 cd hello_cargo
+cp ../src/16.rs src/main.rs
 cargo add kdam
 cargo build
 cargo run < ../inputs/16.txt
