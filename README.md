@@ -18,13 +18,13 @@ Day Solution            | Language                         | Year | Used b4     
 [12.rb](src/12.rb)      | [Ruby](#12-ruby)                 | 1995 | :x:                | :x:                | It's actually good but a lot of ends
 [13.jl](src/13.jl)      | [Julia](#13-julia)               | 2012 | :x:                | :heavy_check_mark: | Why are the ends necessary?
 [14.php](src/14.php)    | [PHP](#14-php)                   | 1995 | :x:                | :x:                | a bit painful $ and ; but does the job
+[15.r](src/15.r)        | [R](#15-r)                       | 1993 | :heavy_check_mark: | :heavy_check_mark: | Quite hard the problem, R did not help
 
 Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 15: Rust
-- [ ] Day 16: R
+- [ ] Day 16: Rust
 - [ ] Day 17: Go
 - [ ] Day 18: Kotlin
 - [ ] Day 19: C
@@ -97,3 +97,9 @@ Get-Content inputs/13.txt | julia src/13.jl
 
 ## 14. PHP
 I thought previously that it was ugly, but it's actually acceptable to read and does the job. Though it's a bit painful to have to put $ before every single variable, why??? Even putting the ; at the end it's not remotely as painful as this.
+
+## 15. R
+Yay finally I can sleep
+```
+Get-Content inputs/15.txt | Rscript src/15.r
+```
