@@ -21,7 +21,7 @@ Day Solution            | Language                         | Year | Used b4     
 [15.r](src/15.r)        | [R](#15-r)                       | 1993 | :heavy_check_mark: | :heavy_check_mark: | Quite hard the problem, R did not help
 [16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, owning is a bit weird
 [17.go](src/17.go)      | [Go](#17-go)                     | 2009 | :x:                | :heavy_check_mark: | It's simple but disappointing
-[18.c](src/18.c)        | [C][#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
+[18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 
 Left out: Algol, Elixir, Powershell, Haskell
 
