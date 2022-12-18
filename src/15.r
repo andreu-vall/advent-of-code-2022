@@ -44,11 +44,10 @@ for (line in lines) {
             }
         }
     }
-    if (! beacon_seen) {
+    if (!beacon_seen) {
         fake_beacons_n <- fake_beacons_n + 1
         fake_beacons[, fake_beacons_n] <- rot_beacon
     }
-
     dist <- manhattan_dist(sensor, beacon)
     start_diag <- sensor - c(dist, 0)
     start <- rotate_45_right(start_diag)
@@ -74,44 +73,30 @@ for (line in lines) {
                     break
                 }
                 if (start[1] < other_start[1]) {
-                    left_dimen <- c(other_start[1] - start[1], dimen[2])
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start
-                    rectangles_dimen2[, rectangles_n2] <- left_dimen
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start + c(left_dimen[1], 0)
-                    rectangles_dimen2[, rectangles_n2] <- dimen - c(left_dimen[1], 0)
+                    first_dimen <- c(other_start[1] - start[1], dimen[2])
+                    other_position <- c(first_dimen[1], 0)
                 }
                 else if (start[1]+dimen[1] > other_start[1]+other_dimen[1]) {
-                    left_dimen <- c(dimen[1] - (start[1]+dimen[1] - (other_start[1]+other_dimen[1])), dimen[2])
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start
-                    rectangles_dimen2[, rectangles_n2] <- left_dimen
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start + c(left_dimen[1], 0)
-                    rectangles_dimen2[, rectangles_n2] <- dimen - c(left_dimen[1], 0)
+                    first_dimen <- c(dimen[1] - (start[1]+dimen[1] - (other_start[1]+other_dimen[1])), dimen[2])
+                    other_position <- c(first_dimen[1], 0)
                 }
                 else if (start[2] < other_start[2]) {
-                    up_dimen <- c(dimen[1], other_start[2] - start[2])
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start
-                    rectangles_dimen2[, rectangles_n2] <- up_dimen
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start + c(0, up_dimen[2])
-                    rectangles_dimen2[, rectangles_n2] <- dimen - c(0, up_dimen[2])
+                    first_dimen <- c(dimen[1], other_start[2] - start[2])
+                    other_position <- c(0, first_dimen[2])
                 }
                 else if (start[2]+dimen[2] > other_start[2]+other_dimen[2]) {
-                    up_dimen <- c(dimen[1], dimen[2] - (start[2]+dimen[2] - (other_start[2]+other_dimen[2])))
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start
-                    rectangles_dimen2[, rectangles_n2] <- up_dimen
-                    rectangles_n2 <- rectangles_n2 + 1
-                    rectangles_start2[, rectangles_n2] <- start + c(0, up_dimen[2])
-                    rectangles_dimen2[, rectangles_n2] <- dimen - c(0, up_dimen[2])
+                    first_dimen <- c(dimen[1], dimen[2] - (start[2]+dimen[2] - (other_start[2]+other_dimen[2])))
+                    other_position <- c(0, first_dimen[2])
                 }
                 else {
                     endifnot(FALSE)
                 }
+                rectangles_n2 <- rectangles_n2 + 1
+                rectangles_start2[, rectangles_n2] <- start
+                rectangles_dimen2[, rectangles_n2] <- first_dimen
+                rectangles_n2 <- rectangles_n2 + 1
+                rectangles_start2[, rectangles_n2] <- start + other_position
+                rectangles_dimen2[, rectangles_n2] <- dimen - other_position
                 break
             }
             i <- i + 1
@@ -123,7 +108,6 @@ for (line in lines) {
         }
     }
 }
-
 real_dimens <- rectangles_dimen[, 1:rectangles_n]
 cat("Extra: areas sum: ", sum(apply(real_dimens, 2, prod)), "\n") # Sum of areas
 
@@ -204,6 +188,5 @@ for (i in 1:rectangles_n) {
         }
     }
 }
-
 end_time <- Sys.time()
 cat("Time2: ", end_time - start_time, "\n")
