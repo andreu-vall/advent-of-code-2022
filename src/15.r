@@ -29,7 +29,6 @@ rotate_45_left <- function(vector) {
 # Why TF does readLine don't work on Rscript
 lines <- readLines("stdin")
 for (line in lines) {
-    #print(line)
     string_arr <- unlist(strsplit(substr(line, nchar("Sensor at x=") + 1,
             nchar(line)), ": closest beacon is at x="))
     sensor <- as.integer(unlist(strsplit(string_arr[1], ", y=")))
@@ -126,11 +125,10 @@ for (line in lines) {
 }
 
 real_dimens <- rectangles_dimen[, 1:rectangles_n]
-cat("Areas sum: ", sum(apply(real_dimens, 2, prod))) # Sum of areas
+cat("Extra: areas sum: ", sum(apply(real_dimens, 2, prod)), "\n") # Sum of areas
 
 diagonal = c(0, 2000000)
 trans = rotate_45_right(diagonal)
-print(trans)
 
 diag1 <- function(vector) {
     return(vector[1] - vector[2])
@@ -173,9 +171,8 @@ for (i in 1:rectangles_n) {
 }
 
 end_time <- Sys.time()
-cat("Time1: ", end_time - start_time)
-
-print(answer)
+cat("Part 1: ", answer, "\n")
+cat("Time1: ", end_time - start_time, "\n")
 
 point_in_rectangle <- function(point, start, dimen) {
     return(all(point >= start) && all(point <= start+dimen-1))
@@ -186,39 +183,27 @@ for (i in 1:rectangles_n) {
     start <- rectangles_start[, i]
     dimen <- rectangles_dimen[, i] - 1
 
-    possible1 <- start - c(1, 0)
-    real1 <- rotate_45_left(possible1)
-    if (all(real1 >= 0) && all(real1 <= 4000000)) {
-        outside <- TRUE
-        for (j in 1:rectangles_n) {
-            if (point_in_rectangle(possible1, rectangles_start[, j], rectangles_dimen[, j])) {
-                outside <- FALSE
-                break
-            }
-        }
-        if (outside) {
-            cat(real1[1]*4000000 + real1[2])
-            break
-        }
-    }
+    possibles <- matrix(c(start - c(1, 0), start + dimen + c(0, 1)), nrow=2)
 
-    
-    possible2 <- start + dimen + c(0, 1)
-    real2 <- rotate_45_left(possible2)
-    if (all(real2 >= 0) && all(real2 <= 4000000)) {
-        outside <- TRUE
-        for (j in 1:rectangles_n) {
-            if (point_in_rectangle(possible2, rectangles_start[, j], rectangles_dimen[, j])) {
-                outside <- FALSE
+    for (possible_n in 1:2) {
+        possible <- possibles[, possible_n]
+        real <- rotate_45_left(possible)
+        if (all(real >= 0) && all(real <= 4000000)) {
+            outside <- TRUE
+            for (j in 1:rectangles_n) {
+                if (point_in_rectangle(possible, rectangles_start[, j], rectangles_dimen[, j])) {
+                    outside <- FALSE
+                    break
+                }
+            }
+            if (outside) {
+                cat("Part 2: ")
+                print(real[1]*4000000 + real[2], digits=16)
                 break
             }
-        }
-        if (outside) {
-            print(real2[1]*4000000 + real2[2], digits=16)
-            break
         }
     }
 }
 
 end_time <- Sys.time()
-cat("Time1: ", end_time - start_time)
+cat("Time2: ", end_time - start_time, "\n")
