@@ -21,13 +21,13 @@ Day Solution            | Language                         | Year | Used b4     
 [15.r](src/15.r)        | [R](#15-r)                       | 1993 | :heavy_check_mark: | :heavy_check_mark: | Quite hard the problem, R did not help
 [16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, owning is a bit weird
 [17.go](src/17.go)      | [Go](#17-go)                     | 2009 | :x:                | :heavy_check_mark: | It's simple but disappointing
+[18.c](src/18.c)        | [C][#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 
 Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 18: Kotlin
-- [ ] Day 19: C
+- [ ] Day 19: Kotlin
 - [ ] Day 20: C#
 - [ ] Day 21: Javascript
 - [ ] Day 22: Java
@@ -131,4 +131,10 @@ cargo run < ../inputs/16.txt
 ## 17. Go
 ```
 Get-Content inputs/17.txt | go run src/17.go
+```
+
+## 18. C
+```
+gcc src/18.c
+Get-Content inputs/18.txt | ./a.exe
 ```
