@@ -51,7 +51,7 @@ func main() {
 
 	var mapa [][7]int //Wtf not using a variable crashes the program
 	var mapa_height = -1
-	for len(mapa)-mapa_height < 8 { //WTF for is go's while
+	for len(mapa)-mapa_height < 8 { //WTF 'for' is go's while
 		mapa = append(mapa, [7]int{0, 0, 0, 0, 0, 0, 0})
 	}
 	var total_peces = 1000000000000
@@ -95,7 +95,6 @@ func main() {
 						//fmt.Print(piece_count, move_n, mapa_height+1, "\n")
 						//pleno++
 					}
-
 				}
 				break
 			} else {
