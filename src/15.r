@@ -4,13 +4,13 @@
 
 big_number <- 500
 
-rectangles_n <- 0 # This is a right expanding list
-rectangles_start <- matrix(nrow=2, ncol=big_number)
-rectangles_dimen <- matrix(nrow=2, ncol=big_number)
+rect_n <- 0 # This is a right expanding list of rectangles
+rect_start <- matrix(nrow=2, ncol=big_number)
+rect_dimen <- matrix(nrow=2, ncol=big_number)
 
-rectangles_n2 <- 0 # This is a stack
-rectangles_start2 <- matrix(nrow=2, ncol=big_number)
-rectangles_dimen2 <- matrix(nrow=2, ncol=big_number)
+rect_n2 <- 0 # This is a stack
+rect_start2 <- matrix(nrow=2, ncol=big_number)
+rect_dimen2 <- matrix(nrow=2, ncol=big_number)
 
 fake_beacons_n <- 0
 fake_beacons <- matrix(nrow=2, ncol=big_number)
@@ -53,20 +53,20 @@ for (line in lines) {
     start <- rotate_45_right(start_diag)
     dimen <- c(2*dist + 1, 2*dist + 1)
 
-    rectangles_n2 <- 1
-    rectangles_start2[, rectangles_n2] <- start
-    rectangles_dimen2[, rectangles_n2] <- dimen
+    rect_n2 <- 1
+    rect_start2[, rect_n2] <- start
+    rect_dimen2[, rect_n2] <- dimen
 
-    while (rectangles_n2 >= 1) {
-        start <- rectangles_start2[, rectangles_n2]
-        dimen <- rectangles_dimen2[, rectangles_n2]
-        rectangles_n2 <- rectangles_n2 - 1
+    while (rect_n2 >= 1) {
+        start <- rect_start2[, rect_n2]
+        dimen <- rect_dimen2[, rect_n2]
+        rect_n2 <- rect_n2 - 1
 
         i <- 1
         has_collision <- FALSE
-        while (i <= rectangles_n) {
-            other_start <- rectangles_start[, i]
-            other_dimen <- rectangles_dimen[, i]
+        while (i <= rect_n) {
+            other_start <- rect_start[, i]
+            other_dimen <- rect_dimen[, i]
             if (all(start+dimen > other_start) && all(other_start+other_dimen > start)) {
                 has_collision <- TRUE
                 if (all(start >= other_start) && all(start+dimen <= other_start+other_dimen)) {
@@ -91,24 +91,24 @@ for (line in lines) {
                 else {
                     endifnot(FALSE)
                 }
-                rectangles_n2 <- rectangles_n2 + 1
-                rectangles_start2[, rectangles_n2] <- start
-                rectangles_dimen2[, rectangles_n2] <- first_dimen
-                rectangles_n2 <- rectangles_n2 + 1
-                rectangles_start2[, rectangles_n2] <- start + other_position
-                rectangles_dimen2[, rectangles_n2] <- dimen - other_position
+                rect_n2 <- rect_n2 + 1
+                rect_start2[, rect_n2] <- start
+                rect_dimen2[, rect_n2] <- first_dimen
+                rect_n2 <- rect_n2 + 1
+                rect_start2[, rect_n2] <- start + other_position
+                rect_dimen2[, rect_n2] <- dimen - other_position
                 break
             }
             i <- i + 1
         }
         if (!has_collision) {
-            rectangles_n <- rectangles_n + 1
-            rectangles_start[, rectangles_n] <- start
-            rectangles_dimen[, rectangles_n] <- dimen
+            rect_n <- rect_n + 1
+            rect_start[, rect_n] <- start
+            rect_dimen[, rect_n] <- dimen
         }
     }
 }
-real_dimens <- rectangles_dimen[, 1:rectangles_n]
+real_dimens <- rect_dimen[, 1:rect_n]
 cat("Extra: areas sum: ", sum(apply(real_dimens, 2, prod)), "\n") # Sum of areas
 
 diagonal = c(0, 2000000)
@@ -124,9 +124,9 @@ diag2 <- function(vector) {
 
 start_time <- Sys.time()
 answer <- 0
-for (i in 1:rectangles_n) {
-    start <- rectangles_start[, i]
-    dimen <- rectangles_dimen[, i] - 1
+for (i in 1:rect_n) {
+    start <- rect_start[, i]
+    dimen <- rect_dimen[, i] - 1
     if (diag1(start + c(0, dimen[2])) <= diag1(trans) && diag1(trans) <= diag1(start + c(dimen[1], 0))) {
         u_up <- diag1(trans) + start[2]
         if (u_up >= start[1]) {
@@ -163,9 +163,9 @@ point_in_rectangle <- function(point, start, dimen) {
 }
 
 start_time <- Sys.time()
-for (i in 1:rectangles_n) {
-    start <- rectangles_start[, i]
-    dimen <- rectangles_dimen[, i] - 1
+for (i in 1:rect_n) {
+    start <- rect_start[, i]
+    dimen <- rect_dimen[, i] - 1
 
     possibles <- matrix(c(start - c(1, 0), start + dimen + c(0, 1)), nrow=2)
 
@@ -174,8 +174,8 @@ for (i in 1:rectangles_n) {
         real <- rotate_45_left(possible)
         if (all(real >= 0) && all(real <= 4000000)) {
             outside <- TRUE
-            for (j in 1:rectangles_n) {
-                if (point_in_rectangle(possible, rectangles_start[, j], rectangles_dimen[, j])) {
+            for (j in 1:rect_n) {
+                if (point_in_rectangle(possible, rect_start[, j], rect_dimen[, j])) {
                     outside <- FALSE
                     break
                 }
