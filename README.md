@@ -20,12 +20,12 @@ Day Solution            | Language                         | Year | Used b4     
 [14.php](src/14.php)    | [PHP](#14-php)                   | 1995 | :x:                | :x:                | a bit painful $ and ; but does the job
 [15.r](src/15.r)        | [R](#15-r)                       | 1993 | :heavy_check_mark: | :heavy_check_mark: | Quite hard the problem, R did not help
 [16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, owning is a bit weird
+[17.go](src/17.go)      | [Go](#17-go)                     | 2009 | :x:                | :heavy_check_mark: | It's simple but disappointing
 
 Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 17: Go
 - [ ] Day 18: Kotlin
 - [ ] Day 19: C
 - [ ] Day 20: C#
@@ -126,4 +126,9 @@ cp ../src/16.rs src/main.rs
 cargo add kdam
 cargo build
 cargo run < ../inputs/16.txt
+```
+
+## 17. Go
+```
+Get-Content inputs/17.txt | go run src/17.go
 ```
