@@ -38,7 +38,7 @@ Order subject to change depending on the problem and how I'm feeling
 I used [OneCompiler](https://onecompiler.com/) to write and run the languages I did not install on my pc.
 
 ## 01. Bash
-Bourne Again SHell. Used for making Scripts
+Bourne Again SHell. Used for making Scripts. Comes with [WSL (Windows Subsystem for Linux)](https://learn.microsoft.com/en-us/windows/wsl/install).
 ```
 wsl
 bash src/01.sh
@@ -50,7 +50,7 @@ Needs quite a lot of jumps, but at least has divison with remainder for modular 
 
 ## 03. Fortran
 FORmula TRANslation
-The first commercially available language and one of the first high level programming languages, still used today for high performance computing.
+The first commercially available language and one of the first high level programming languages, still used today for high performance computing. I installed it inside the Ubuntu version in WSL with: ```sudo apt install gfortran```
 ```
 wsl
 gfortran src/03.f90
@@ -58,7 +58,7 @@ gfortran src/03.f90
 ```
 
 ## 04. SQL
-Structured Query Language, 'Ess-cue-ell'
+Structured Query Language, 'Ess-cue-ell'. Installed previously along the MySQL Workbench, which is useless so I uninstalled the Workbench.
 ```
 wsl
 sed -i 's/-/,/g' inputs/04.txt
@@ -81,9 +81,10 @@ Decent, I like not having to end lines with the ;
 Getting the length of a string with # is really gangster, but getting a char from an string is really painful. Overall pretty good experience.
 
 ## 09. MATLAB
-The functions are a bit pants because I can't edit a dictionary inside them, but overall it's decent.
+The functions are a bit pants because I can't edit a dictionary inside them, but overall it's decent. Used the official [MATLAB Online IDE](https://es.mathworks.com/products/matlab-online.html)
 
 ## 10. Perl
+It came installed with the Ubuntu version of the WSL.
 ```
 wsl
 perl src/10.pl < inputs/10.txt
@@ -96,6 +97,7 @@ It's actually really ugly to be used as a General Programming Language.
 Decent.
 
 ## 13. Julia
+Installed the [Julia](https://julialang.org/) Windows version.
 ```
 Get-Content inputs/13.txt | julia src/13.jl
 ```
@@ -104,13 +106,15 @@ Get-Content inputs/13.txt | julia src/13.jl
 I thought previously that it was ugly, but it's actually acceptable to read and does the job. Though it's a bit painful to have to put $ before every single variable, why??? Even putting the ; at the end it's not remotely as painful as this.
 
 ## 15. R
-Yay finally I can sleep
+Yay finally I can sleep. I installed previously RStudio but it's unncessary, only R and Rscript needed.
 ```
 Get-Content inputs/15.txt | Rscript src/15.r
 ```
 
 ## 16. Rust
 That was a ride indeed. Rust is actually quite interesting.
+
+I installed Rust on WSL with: ```curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh```
 ```
 wsl
 rustc src/16.rs
@@ -129,11 +133,13 @@ cargo run < ../inputs/16.txt
 ```
 
 ## 17. Go
+Using [Go](https://go.dev/) official executable on Windows.
 ```
 Get-Content inputs/17.txt | go run src/17.go
 ```
 
 ## 18. C
+Using [Cygwin](https://www.cygwin.com/) on Windows.
 ```
 gcc src/18.c
 Get-Content inputs/18.txt | ./a.exe
