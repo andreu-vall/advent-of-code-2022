@@ -22,12 +22,12 @@ Day Solution            | Language                         | Year | Used b4     
 [16.rs](src/16.rs)      | [Rust](#16-rust)                 | 2010 | :x:                | :heavy_check_mark: | It's interesting, owning is a bit weird
 [17.go](src/17.go)      | [Go](#17-go)                     | 2009 | :x:                | :heavy_check_mark: | It's simple but disappointing
 [18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
+[19.kt](src/19.kt)      | [Kotlin](#19-kotlin)             | 2011 | :x:                | :heavy_check_mark: | It's ok, has some cool things
 
 Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 19: Kotlin
 - [ ] Day 20: C#
 - [ ] Day 21: Javascript
 - [ ] Day 22: Java
@@ -142,4 +142,11 @@ Using [Cygwin](https://www.cygwin.com/) on Windows.
 ```
 gcc src/18.c
 Get-Content inputs/18.txt | ./a.exe
+```
+
+## 19. Kotlin
+Slowest language to compile ever (10 seconds from terminal, 3 seconds using IntelliJ IDEA). I installed the [Kotlin](https://kotlinlang.org/docs/command-line.html#install-the-compiler) command line compiler but it's necessary to create a Kotlin project with [IntelliJ IDEA](https://www.jetbrains.com/idea/) if you don't want to die while fixing compile errors.
+```
+kotlinc src/19.kt -include-runtime -d 19.jar
+Get-Content inputs/19.txt | java -jar 19.jar
 ```
