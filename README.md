@@ -58,10 +58,9 @@ gfortran src/03.f90
 ```
 
 ## 04. SQL
-Structured Query Language, 'Ess-cue-ell'. Installed previously along the MySQL Workbench, which is useless so I uninstalled the Workbench.
+Structured Query Language, 'Ess-cue-ell'. Installed previously along the MySQL Workbench, which is useless so I uninstalled the Workbench. I used Linux's sed to replace - by , in the file to be able to load the file easily in sql.
 ```
-wsl
-sed -i 's/-/,/g' inputs/04.txt
+wsl sed -i 's/-/,/g' inputs/04.txt
 mysql --local-infile=1 -u root -p
 source src/04.sql
 ```
