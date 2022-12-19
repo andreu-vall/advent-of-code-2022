@@ -12,11 +12,12 @@ fun compute(costs : Array<IntArray>, maximums : IntArray, robots : IntArray, res
     }
     var maxValue = resources.last()
     for (i in robots.indices) {
+        //We can only spawn 1 robot/minute, so generating more than the maximum needed/robot is useless
         if (robots[i] < maximums[i] && robots.zip(costs[i]){ r, c -> !(c >= 1 && r==0) }.all{ it }) {
             var res = resources
             var min = minutes
-            while (! res.zip(costs[i]){ x, y -> x - y}.all{ it >= 0}) {
-                res = res.zip(robots){ x, y -> x + y}.toIntArray()
+            while (! res.zip(costs[i]){ x, y -> x - y}.all{ it >= 0}) { //Wait till I get enough resources to build the
+                res = res.zip(robots){ x, y -> x + y}.toIntArray()      //robot (there needs to be a robot producing em)
                 min -= 1
             }
             min -= 1
