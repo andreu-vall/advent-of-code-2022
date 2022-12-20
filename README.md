@@ -23,13 +23,13 @@ Day Solution            | Language                         | Year | Used b4     
 [17.go](src/17.go)      | [Go](#17-go)                     | 2009 | :x:                | :heavy_check_mark: | It's simple but disappointing
 [18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 [19.kt](src/19.kt)      | [Kotlin](#19-kotlin)             | 2011 | :x:                | :heavy_check_mark: | It's ok, has some cool things
+[20.js](src/20.js)      | [Javascript](#20-javascript)     | 1995 | :heavy_check_mark: | :heavy_check_mark: | Never have I seen so many weird errors
 
 Left out: Algol, Elixir, Powershell, Haskell
 
 Order subject to change depending on the problem and how I'm feeling
 
-- [ ] Day 20: C#
-- [ ] Day 21: Javascript
+- [ ] Day 21: C#
 - [ ] Day 22: Java
 - [ ] Day 23: Typescript
 - [ ] Day 24: C++
@@ -149,4 +149,10 @@ Slowest language to compile ever (10 seconds from terminal, 3 seconds using Inte
 ```
 kotlinc src/19.kt -include-runtime -d 19.jar
 Get-Content inputs/19.txt | java -jar 19.jar
+```
+
+## 20. Javascript
+Getting the input from stdin was even more difficult than assemlby... And so many weird things and errors.
+```
+Get-Content inputs/20.txt | node src/20.js
 ```
