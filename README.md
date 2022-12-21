@@ -24,6 +24,7 @@ Day Solution            | Language                         | Year | Used b4     
 [18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 [19.kt](src/19.kt)      | [Kotlin](#19-kotlin)             | 2011 | :x:                | :heavy_check_mark: | It's ok, has some cool things
 [20.js](src/20.js)      | [Javascript](#20-javascript)     | 1995 | :heavy_check_mark: | :heavy_check_mark: | Never have I seen so many weird errors
+[21.cs](src/21.cs)      | [C#](#21-c)                     | 2000 | :x:                | :heavy_check_mark: | 
 
 Left out: Algol, Elixir, Powershell, Haskell
 
@@ -155,4 +156,13 @@ Get-Content inputs/19.txt | java -jar 19.jar
 Getting the input from stdin was even more difficult than assemlby... And so many weird things and errors.
 ```
 Get-Content inputs/20.txt | node src/20.js
+```
+
+## 21. C#
+Installed the [.NET SDK](https://dotnet.microsoft.com/en-us/).
+```
+dotnet new console -o app
+cd app
+cp ../src/21.cs Program.cs
+Get-Content ../inputs/21.txt | dotnet run
 ```
