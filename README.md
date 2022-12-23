@@ -24,19 +24,13 @@ Day Solution            | Language                         | Year | Used b4     
 [18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 [19.kt](src/19.kt)      | [Kotlin](#19-kotlin)             | 2011 | :x:                | :heavy_check_mark: | It's ok, has some cool things
 [20.js](src/20.js)      | [Javascript](#20-javascript)     | 1995 | :heavy_check_mark: | :heavy_check_mark: | Never have I seen so many weird errors
-[21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | 
-[22.java](src/22.java)  | [Java](#22-java)
-[23.ts](src/23.ts)      | [TypeScript](#23-typescript)
+[21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | (Pending both at the same time)
+[22.java](src/22.java)  | [Java](#22-java) (pending part 2)
+[23.ts](src/23.ts)      | [TypeScript](#23-typescript) (today)
+[24.cpp](src/24.cpp)
+[25.py](src/25.py)
 
-Left out: Algol, Elixir, Powershell, Haskell
-
-Order subject to change depending on the problem and how I'm feeling
-
-- [ ] Day 21: C#
-- [ ] Day 22: Java
-- [ ] Day 23: Typescript
-- [ ] Day 24: C++
-- [ ] Day 25: Python
+<!--Left out: Algol, Elixir, Powershell, Haskell-->
 
 I used [OneCompiler](https://onecompiler.com/) to write and run the languages I did not install on my pc.
 
