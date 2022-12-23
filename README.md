@@ -24,7 +24,9 @@ Day Solution            | Language                         | Year | Used b4     
 [18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 [19.kt](src/19.kt)      | [Kotlin](#19-kotlin)             | 2011 | :x:                | :heavy_check_mark: | It's ok, has some cool things
 [20.js](src/20.js)      | [Javascript](#20-javascript)     | 1995 | :heavy_check_mark: | :heavy_check_mark: | Never have I seen so many weird errors
-[21.cs](src/21.cs)      | [C#](#21-c)                     | 2000 | :x:                | :heavy_check_mark: | 
+[21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | 
+[22.java](src/22.java)  | [Java](#22-java)
+[23.ts](src/23.ts)      | [TypeScript](#23-typescript)
 
 Left out: Algol, Elixir, Powershell, Haskell
 
@@ -165,4 +167,16 @@ dotnet new console -o app
 cd app
 cp ../src/21.cs Program.cs
 Get-Content ../inputs/21.txt | dotnet run
+```
+
+## 22. Java
+```
+java src/22.java
+```
+
+## 23. TypeScript
+```
+npm install -g typescript
+tsc src/23.ts
+node src/23.js
 ```
