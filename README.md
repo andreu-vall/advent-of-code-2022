@@ -26,7 +26,7 @@ Day Solution            | Language                         | Year | Used b4     
 [20.js](src/20.js)      | [Javascript](#20-javascript)     | 1995 | :heavy_check_mark: | :heavy_check_mark: | Never have I seen so many weird errors
 [21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | (Pending both at the same time)
 [22.java](src/22.java)  | [Java](#22-java) (pending part 2)
-[23.ts](src/23.ts)      | [TypeScript](#23-typescript) (today)
+[23.ts](src/23.ts)      | [TypeScript](#23-typescript)     | 2012 | :x:                | :heavy_check_mark: | Probably better than Javascript?
 [24.cpp](src/24.cpp)
 [25.py](src/25.py)
 
@@ -171,6 +171,7 @@ java src/22.java
 ## 23. TypeScript
 ```
 npm install -g typescript
+npm install @types/node --save-dev
 tsc src/23.ts
 node src/23.js
 ```
