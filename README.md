@@ -28,7 +28,7 @@ Day Solution            | Language                         | Year | Used b4     
 [22.java](src/22.java)  | [Java](#22-java)                 | 1995 | :heavy_check_mark: | :heavy_check_mark: | Ok but cold be better and simpler
 [23.ts](src/23.ts)      | [TypeScript](#23-typescript)     | 2012 | :x:                | :heavy_check_mark: | Probably better than Javascript?
 [24.cpp](src/24.cpp)    | [C++](#24-c)                     | 1985 | :heavy_check_mark: | :heavy_check_mark: | C++ is funnier than I remembered
-[25.py](src/25.py)
+[25.py](src/25.py)      | [Python](#25-python)             | 1991 | :heavy_check_mark: | :heavy_check_mark: | I love Python
 
 <!--Left out: Algol, Elixir, Powershell, Haskell-->
 
@@ -180,4 +180,10 @@ node src/23.js
 ```
 g++ src/24.cpp
 Get-Content inputs/24.txt | ./a.exe
+```
+
+## 25. Python
+If it can be done in Python, it should be done in Python.
+```
+Get-Content inputs/25.txt | python src/25.py
 ```
