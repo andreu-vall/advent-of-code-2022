@@ -24,8 +24,8 @@ Day Solution            | Language                         | Year | Used b4     
 [18.c](src/18.c)        | [C](#18-c)                       | 1972 | :heavy_check_mark: | :heavy_check_mark: | Worse language to debug
 [19.kt](src/19.kt)      | [Kotlin](#19-kotlin)             | 2011 | :x:                | :heavy_check_mark: | It's ok, has some cool things
 [20.js](src/20.js)      | [Javascript](#20-javascript)     | 1995 | :heavy_check_mark: | :heavy_check_mark: | Never have I seen so many weird errors
-[21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | (Pending both at the same time)
-[22.java](src/22.java)  | [Java](#22-java) (pending part 2)
+[21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | It does the job and is consistent
+[22.java](src/22.java)  | [Java](#22-java)                 | 1995 | :heavy_check_mark: | :heavy_check_mark: | Ok but cold be better and simpler
 [23.ts](src/23.ts)      | [TypeScript](#23-typescript)     | 2012 | :x:                | :heavy_check_mark: | Probably better than Javascript?
 [24.cpp](src/24.cpp)    | [C++](#24-c)                     | 1985 | :heavy_check_mark: | :heavy_check_mark: | C++ is funnier than I remembered
 [25.py](src/25.py)
