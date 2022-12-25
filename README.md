@@ -27,7 +27,7 @@ Day Solution            | Language                         | Year | Used b4     
 [21.cs](src/21.cs)      | [C#](#21-c)                      | 2000 | :x:                | :heavy_check_mark: | (Pending both at the same time)
 [22.java](src/22.java)  | [Java](#22-java) (pending part 2)
 [23.ts](src/23.ts)      | [TypeScript](#23-typescript)     | 2012 | :x:                | :heavy_check_mark: | Probably better than Javascript?
-[24.cpp](src/24.cpp)
+[24.cpp](src/24.cpp)    | [C++](#24-c)                     | 1985 | :heavy_check_mark: | :heavy_check_mark: | C++ is funnier than I remembered
 [25.py](src/25.py)
 
 <!--Left out: Algol, Elixir, Powershell, Haskell-->
@@ -174,4 +174,10 @@ npm install -g typescript
 npm install @types/node --save-dev
 tsc src/23.ts
 node src/23.js
+```
+
+## 24. C++
+```
+g++ src/24.cpp
+Get-Content inputs/24.txt | ./a.exe
 ```
