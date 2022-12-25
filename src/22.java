@@ -16,7 +16,7 @@ class MyClass {
 
     public static int move(ArrayList<String> mapa, int[] position, int facing, int num_moves, int n, int m, int[][] cube_starts) throws Exception {
         int[] position_tmp = {position[0], position[1]};
-        int facing_tmp = facing;
+        int f2 = facing;
         while (num_moves > 0) {
             int i = position_tmp[0], j = position_tmp[1];
             if (facing == 0) {
@@ -28,133 +28,133 @@ class MyClass {
             } else {
                 i = (i - 1 + n) % n;
             }
-            int square = get_square(position_tmp, cube_starts);
-            if (square != get_square(new int[]{i, j}, cube_starts)) { //I left my square
-                int[] int_position = {i - 50*cube_starts[square][0], j - 50*cube_starts[square][1]};
-                int[] new_int_position;
-                int new_square = 0;
-                if (square == 1) {
-                    if (facing_tmp == 0) {
-                        new_square = 2;
-                        new_int_position = new int[]{int_position[0], 0};
+            int sq = get_square(position_tmp, cube_starts);
+            if (sq != get_square(new int[]{i, j}, cube_starts)) { //I left my square
+                int[] ac = {i - 50*cube_starts[sq][0], j - 50*cube_starts[sq][1]};
+                int[] nac;
+                int nsq = 0;
+                if (sq == 1) {
+                    if (f2 == 0) {
+                        nsq = 2;
+                        nac = new int[]{ac[0], 0};
                     }
-                    else if (facing_tmp == 1) {
-                        new_square = 3;
-                        new_int_position = new int[]{0, int_position[1]};
+                    else if (f2 == 1) {
+                        nsq = 3;
+                        nac = new int[]{0, ac[1]};
                     }
-                    else if (facing_tmp == 2) {
-                        new_square = 5;
-                        facing_tmp = 0;
-                        new_int_position = new int[]{49 - int_position[0], 0};
+                    else if (f2 == 2) {
+                        nsq = 5;
+                        f2 = 0;
+                        nac = new int[]{49 - ac[0], 0};
                     }
                     else {
-                        new_square = 4;
-                        facing_tmp = 0;
-                        new_int_position = new int[]{int_position[1], 0};
+                        nsq = 4;
+                        f2 = 0;
+                        nac = new int[]{ac[1], 0};
                     }
                 }
-                else if (square == 2) {
-                    if (facing_tmp == 0) {
-                        new_square = 6;
-                        facing_tmp = 2;
-                        new_int_position = new int[]{49 - int_position[0], 49};
+                else if (sq == 2) {
+                    if (f2 == 0) {
+                        nsq = 6;
+                        f2 = 2;
+                        nac = new int[]{49 - ac[0], 49};
                     }
-                    else if (facing_tmp == 1) {
-                        new_square = 3;
-                        facing_tmp = 2;
-                        new_int_position = new int[]{int_position[1], 49};
+                    else if (f2 == 1) {
+                        nsq = 3;
+                        f2 = 2;
+                        nac = new int[]{ac[1], 49};
                     }
-                    else if (facing_tmp == 2) {
-                        new_square = 1;
-                        new_int_position = new int[]{int_position[0], 49};
+                    else if (f2 == 2) {
+                        nsq = 1;
+                        nac = new int[]{ac[0], 49};
                     }
                     else {
-                        new_square = 4;
-                        new_int_position = new int[]{49, int_position[1]};
+                        nsq = 4;
+                        nac = new int[]{49, ac[1]};
                     }
                 }
-                else if (square == 3) {
-                    if (facing_tmp == 0) {
-                        new_square = 2;
-                        facing_tmp = 3;
-                        new_int_position = new int[]{49, int_position[0]};
+                else if (sq == 3) {
+                    if (f2 == 0) {
+                        nsq = 2;
+                        f2 = 3;
+                        nac = new int[]{49, ac[0]};
                     }
-                    else if (facing_tmp == 1) {
-                        new_square = 6;
-                        new_int_position = new int[]{0, int_position[1]};
+                    else if (f2 == 1) {
+                        nsq = 6;
+                        nac = new int[]{0, ac[1]};
                     }
-                    else if (facing_tmp == 2) {
-                        new_square = 5;
-                        facing_tmp = 1;
-                        new_int_position = new int[]{0, int_position[0]};
+                    else if (f2 == 2) {
+                        nsq = 5;
+                        f2 = 1;
+                        nac = new int[]{0, ac[0]};
                     }
                     else {
-                        new_square = 1;
-                        new_int_position = new int[]{49, int_position[1]};
+                        nsq = 1;
+                        nac = new int[]{49, ac[1]};
                     }
                 }
-                else if (square == 4) {
-                    if (facing_tmp == 0) {
-                        new_square = 6;
-                        facing_tmp = 3;
-                        new_int_position = new int[]{49, int_position[0]};
+                else if (sq == 4) {
+                    if (f2 == 0) {
+                        nsq = 6;
+                        f2 = 3;
+                        nac = new int[]{49, ac[0]};
                     }
-                    else if (facing_tmp == 1) {
-                        new_square = 2;
-                        new_int_position = new int[]{0, int_position[1]};
+                    else if (f2 == 1) {
+                        nsq = 2;
+                        nac = new int[]{0, ac[1]};
                     }
-                    else if (facing_tmp == 2) {
-                        new_square = 1;
-                        facing_tmp = 1;
-                        new_int_position = new int[]{0, int_position[0]};
+                    else if (f2 == 2) {
+                        nsq = 1;
+                        f2 = 1;
+                        nac = new int[]{0, ac[0]};
                     }
                     else {
-                        new_square = 5;
-                        new_int_position = new int[]{49, int_position[1]};
+                        nsq = 5;
+                        nac = new int[]{49, ac[1]};
                     }
                 }
-                else if (square == 5) {
-                    if (facing_tmp == 0) {
-                        new_square = 6;
-                        new_int_position = new int[]{int_position[0], 0};
+                else if (sq == 5) {
+                    if (f2 == 0) {
+                        nsq = 6;
+                        nac = new int[]{ac[0], 0};
                     }
-                    else if (facing_tmp == 1) {
-                        new_square = 4;
-                        new_int_position = new int[]{0, int_position[1]};
+                    else if (f2 == 1) {
+                        nsq = 4;
+                        nac = new int[]{0, ac[1]};
                     }
-                    else if (facing_tmp == 2) {
-                        new_square = 1;
-                        facing_tmp = 0;
-                        new_int_position = new int[]{49 - int_position[0], 0};
+                    else if (f2 == 2) {
+                        nsq = 1;
+                        f2 = 0;
+                        nac = new int[]{49 - ac[0], 0};
                     }
                     else {
-                        new_square = 3;
-                        facing_tmp = 0;
-                        new_int_position = new int[]{int_position[1], 0};
+                        nsq = 3;
+                        f2 = 0;
+                        nac = new int[]{ac[1], 0};
                     }
                 }
                 else {
-                    if (facing_tmp == 0) {
-                        new_square = 2;
-                        facing_tmp = 2;
-                        new_int_position = new int[]{49 - int_position[0], 49};
+                    if (f2 == 0) {
+                        nsq = 2;
+                        f2 = 2;
+                        nac = new int[]{49 - ac[0], 49};
                     }
-                    else if (facing_tmp == 1) {
-                        new_square = 4;
-                        facing_tmp = 2;
-                        new_int_position = new int[]{int_position[1], 49};
+                    else if (f2 == 1) {
+                        nsq = 4;
+                        f2 = 2;
+                        nac = new int[]{ac[1], 49};
                     }
-                    else if (facing_tmp == 2) {
-                        new_square = 5;
-                        new_int_position = new int[]{int_position[0], 49};
+                    else if (f2 == 2) {
+                        nsq = 5;
+                        nac = new int[]{ac[0], 49};
                     }
                     else {
-                        new_square = 3;
-                        new_int_position = new int[]{49, int_position[1]};
+                        nsq = 3;
+                        nac = new int[]{49, ac[1]};
                     }
                 }
-                i = 50*cube_starts[new_square][0] + new_int_position[0];
-                j = 50*cube_starts[new_square][1] + new_int_position[1];
+                i = 50*cube_starts[nsq][0] + nac[0];
+                j = 50*cube_starts[nsq][1] + nac[1];
             }
             if (mapa.get(i).charAt(j) == '#') {
                 return facing;
@@ -164,7 +164,7 @@ class MyClass {
             if (mapa.get(i).charAt(j) == '.') {
                 position[0] = i;
                 position[1] = j;
-                facing = facing_tmp;
+                facing = f2;
                 num_moves--;
             }
         }
